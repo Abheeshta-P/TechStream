@@ -1,17 +1,6 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   margin : 0;
@@ -19,13 +8,57 @@
   box-sizing : border-box;
   font-family : Arial, Helvetica, sans-serif;
 }
-html,body {
+html,body,#root {
   height : 100vh;
   width : 100%;
   display: flex;
   justify-content: center;
-  
 }
+#root{
+  align-items: center;
+}
+
+/* preloader */
+
+  .container {
+    --uib-color: white;
+    --uib-speed: 1.4s;
+    --uib-bg-opacity: .1;
+    transform-origin: center;
+    overflow: visible;
+     width: 100px;
+    height: 300px;
+  }
+
+  .car {
+    fill: none;
+    stroke: var(--uib-color);
+    stroke-dasharray: 15, 85;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    animation: travel var(--uib-speed) linear infinite;
+    will-change: stroke-dasharray, stroke-dashoffset;
+    transition: stroke 0.5s ease;
+  }
+
+  .track {
+    stroke: var(--uib-color);
+    opacity: var(--uib-bg-opacity);
+    transition: stroke 0.5s ease;
+  }
+
+  @keyframes travel {
+    0% {
+      stroke-dashoffset: 0;
+    }
+
+    100% {
+      stroke-dashoffset: -100;
+    }
+  }
+
+
+
 
 /* xs */
 @media (max-width: 475px) {

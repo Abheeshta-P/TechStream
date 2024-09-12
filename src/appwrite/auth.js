@@ -49,9 +49,11 @@ export class AuthService {
   // check whether user is already logged in and who is that user
   async getCurrentUser() {
     try {
+      // Get the currently logged in user
       return await this.account.get(); 
     } catch (error) {
       console.log("App write service :: getCurrentUser :: error",error);
+      return false;
     }
     // if did not get the user
     return null;
