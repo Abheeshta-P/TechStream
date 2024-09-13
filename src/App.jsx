@@ -18,7 +18,7 @@ function App() {
     // check whether there is any logged in user
     authService.getCurrentUser().then((userData) =>{
       // if userAccount is there show the logged in ui
-      if (userAccount){
+      if (userData){
         dispatch(login({userData}));
       }
       else {
@@ -38,7 +38,7 @@ function App() {
    
     <Header/>
     <main>
-      <Outlet/>
+      {/* <Outlet/> */}
     </main>
     <Footer/>
    
