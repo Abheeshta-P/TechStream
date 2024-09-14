@@ -27,6 +27,7 @@ export class Service {
     } catch(error) {
       console.log("App write service :: createPost :: error",error);
     }
+    return null;
   }
 
   // update post with document id as slug
@@ -41,6 +42,7 @@ export class Service {
     } catch(error) {
       console.log("App write service :: updatePost :: error",error);
     }
+    return null;
   }
   
   // delete post
@@ -53,7 +55,6 @@ export class Service {
       console.log("App write service :: deletePost :: error",error);
       return false;
     }
-    return false;
   }
 
   // get post
