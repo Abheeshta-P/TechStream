@@ -1,15 +1,15 @@
 import React from 'react'
-import authService from '../../appwrite/auth'
+import appWriteAuth from '../../appwrite/auth'
 import { logout } from '../../features/authSlice'
 import { useDispatch } from 'react-redux'
 
 function LogoutBtn() {
   const dispacth = useDispatch();
   const inputHandler = ()=>{
-    authService.logout().then(()=>{
+    appWriteAuth.logout().then(()=>{
       dispacth(logout());
     }).catch(error =>{
-      console.log("Logout button :: authService.logout :: error",error);
+      console.log("Logout button :: appWriteAuth.logout :: error",error);
     })
   }
   return (

@@ -28,6 +28,7 @@ export class AuthService {
       console.log("App write service :: signUp :: error",error);
       throw error;
     }
+    return null;
   }
 
   // login
