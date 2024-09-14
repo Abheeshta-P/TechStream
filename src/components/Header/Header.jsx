@@ -6,7 +6,7 @@ import {Container,Logo, LogoutBtn} from '../index';
 // componens which are active are displayed
 // to get the active state we use useSelector
 function Header() {
-  const authStatus = useSelector((state)=>state.auth.status);
+  const authStatus = useSelector((state)=>state.authSliceReducer.status);
   const navigate = useNavigate()
   const listIems = [
     {
@@ -54,9 +54,9 @@ function Header() {
               {
                 listIems.map(list => list.active ? (
                   <li key={list.name}>
-                    <button className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full' onClick={navigate(list.slug)}>{list.name}</button>
+                    <button className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full' onClick={()=>navigate(list.slug)}>{list.name}</button>
                   </li>
-                ):null)
+                ): null)
               }
               {
                 authStatus && (<li>
@@ -72,3 +72,4 @@ function Header() {
 }
 
 export default Header
+{/* <Link to={list.slug} className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full' >{list.name}</Link> */}

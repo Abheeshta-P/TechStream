@@ -8,6 +8,8 @@ function LogoutBtn() {
   const inputHandler = ()=>{
     authService.logout().then(()=>{
       dispacth(logout());
+    }).catch(error =>{
+      console.log("Logout button :: authService.logout :: error",error);
     })
   }
   return (
