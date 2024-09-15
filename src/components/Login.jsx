@@ -19,7 +19,7 @@ function Login() {
       if (session) {
         try {
           const userData = await appWriteAuth.getCurrentUser();
-          if(userData) dispatch(storeLogin(userData));
+          if(userData) dispatch(storeLogin({userData}));
           navigate('/');
         } catch (error){
           console.log("login form :: getCurrentUser :: error",error);
@@ -30,7 +30,7 @@ function Login() {
     }
   }
   return (
-    <div className='flex items-center justify-center w-full'>
+    <div className='flex items-center justify-center w-full text-black'>
         <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
         <div className="mb-2 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
@@ -55,7 +55,7 @@ function Login() {
           type = 'email'
           placeholder = 'Enter your Email'
           {
-            ...register ('Email',{
+            ...register ('email',{
               required : true,
               validate: {
                 matchPatern: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
@@ -69,7 +69,7 @@ function Login() {
           type = 'password'
           placeholder = 'Enter your Password'
           {
-            ...register ('Password',{
+            ...register ('password',{
               required : true
             }
             )

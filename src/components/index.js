@@ -13,4 +13,6 @@ import Login from './Login';
 import Signup from './Signup';
 import PostForm from "./PostForm/PostForm";
 
-export {Header,Footer,Container,Logo,LogoutBtn,Input,Button,PostCard,RTE,Select,Login,Signup,PostForm}
+import PreLoader from "./PreLoader/PreLoader";
+
+export {Header,Footer,Container,Logo,LogoutBtn,Input,Button,PostCard,RTE,Select,Login,Signup,PostForm,PreLoader}

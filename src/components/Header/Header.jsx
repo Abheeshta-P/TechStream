@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom';
 import {Container,Logo, LogoutBtn} from '../index';
@@ -39,9 +39,8 @@ function Header() {
       active : authStatus
     }
   ]
- 
   return (
-    <header className='py-3 shadow bg-gray-500'>
+    <header className='py-3 shadow bg-gray-500 w-full'>
       <Container>
         <nav className='flex'>
             <div className="mr-4">
@@ -50,7 +49,7 @@ function Header() {
               </Link>
             </div>
             <div className="flex justify-evenly">
-             <ul>
+             <ul className='flex'>
               {
                 listIems.map(list => list.active ? (
                   <li key={list.name}>

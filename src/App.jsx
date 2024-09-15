@@ -3,9 +3,7 @@ import { useState } from "react"
 import { useDispatch } from "react-redux";
 import authService from "./appwrite/auth";
 import { login, logout } from "./features/authSlice";
-import PreLoader from "./components/PreLoader/PreLoader";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import {PreLoader,Header,Footer} from './components'
 import { Outlet } from "react-router-dom";
 
 function App() {
@@ -33,18 +31,18 @@ function App() {
   },[])
 
   return !loading ?  
-  <div className="min-h-screen flex flex-wrap content-between min-w-full flex-col">
+  <div className="flex h-screen content-between w-full flex-col">
    
    
     <Header/>
-    <main>
-      {/* <Outlet/> */}
+    <main className="w-full h-screen">
+      <Outlet/>
     </main>
     <Footer/>
    
    
   
-  </div>:<PreLoader/>
+  </div>:<div className="w-full h-screen flex justify-center items-center"><PreLoader/></div>
 }
 
 export default App

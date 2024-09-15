@@ -19,7 +19,7 @@ function Signup() {
         if(session){
           try {
             const userData = await appWriteAuth.getCurrentUser();
-            if(userData) dispatch(storeLogin(userData));
+            if(userData) dispatch(storeLogin({userData}));
             navigate('/');
           } catch (error){
             console.log("signup form :: getCurrentUser :: error",error);
@@ -30,9 +30,9 @@ function Signup() {
       }
   }
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center text-black">
     <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
-    <div className="mb-2 flex justify-center">
+    <div className="mb-2 flex justify-center items-center">
             <span className="inline-block w-full max-w-[100px]">
                 <Logo />
             </span>
@@ -77,6 +77,7 @@ function Signup() {
           {...register("password", {
               required: true,})}
           />
+          <p className='text-black font-bold text-2xl'> Password should be atleast 8 letter long </p>
           <Button children={'Sign up'} type = 'submit' className={'w-full'}/>
           </div>
         </form>

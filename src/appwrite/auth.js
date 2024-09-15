@@ -18,7 +18,8 @@ export class AuthService {
       const userAccount = await this.account.create(ID.unique(),email,password,name);
       if(userAccount) {
         // if user account is already there then directly login
-        this.login(email,password);
+        const loginSession = await this.login({email, password}); 
+        return loginSession; 
       } else {
         // create a account
         return userAccount;
@@ -28,7 +29,6 @@ export class AuthService {
       console.log("App write service :: signUp :: error",error);
       throw error;
     }
-    return null;
   }
 
   // login
@@ -54,9 +54,7 @@ export class AuthService {
       return await this.account.get(); 
     } catch (error) {
       console.log("App write service :: getCurrentUser :: error",error);
-      return false;
     }
-    // if did not get the user
     return null;
   }
 

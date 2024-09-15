@@ -22,18 +22,16 @@ function PostForm({post}) {
       const fileData = data.image[0]? await appWriteConfig.uploadFile(data.image[0]):null;
       // upload all other update data
       if (fileData){
-            appWriteConfig.deleteFile(data.featuredImage);
-      
-          try {
-            const uploadedData = await appWriteConfig.updatePost(post.$id,{...data,featuredImage:fileData.$id});
+         appWriteConfig.deleteFile(data.featuredImage);
+      }
+      try {
+            const uploadedData = await appWriteConfig.updatePost(post.$id,{...data,featuredImage:fileData?fileData.$id:post.featuredImage});
             if(uploadedData){
               // navigate to place where it is uploaded
               navigate(`/post/${uploadedData.$id}`);
             }
-          }  catch (error){
+      } catch (error){
             console.log("PostForm :: updatePost in handler :: error",error);
-          }
-        
       }
 
     } else{
@@ -58,7 +56,7 @@ function PostForm({post}) {
   // slug transform
   const slugTransform = useCallback((value)=>{
     if(value &&  typeof value === 'string'){
-      return value.trim().toLowerCase().replace(/[^a-zA-Z\s\d]+/g, "-").replace(/\s/g, "-");
+      return value.toLowerCase().replace(/[^a-zA-Z\s\d]+/g, "-").replace(/\s/g, "-");
     }
     return "";
   },[]);
@@ -71,7 +69,7 @@ function PostForm({post}) {
       }
     });
     return () => subscription.unsubscribe();
-  },[watch,slugTransform,setValue]);
+  },[watch,setValue]);
 
   return (
     <form onSubmit={handleSubmit(postForm)}className="flex flex-wrap">
@@ -87,7 +85,7 @@ function PostForm({post}) {
                     placeholder="Slug"
                     className="mb-4"
                     {...register("slug", { required: true })}
-                    onInput={(e) => {
+                    onChange={(e) => {
                         setValue("slug", slugTransform(e.currentTarget.value), { shouldValidate: true });
                     }}
                 />
@@ -104,7 +102,7 @@ function PostForm({post}) {
                 {post && (
                     <div className="w-full mb-4">
                         <img
-                            src={appwriteService.getFilePreview(post.featuredImage)}
+                            src={appWriteConfig.getFilePreview(post.featuredImage)}
                             alt={post.title}
                             className="rounded-lg"
                         />

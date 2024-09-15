@@ -4,26 +4,32 @@ import { PostCard,Container } from '../components';
 
 function Home() {
   const [posts,setPosts] = useState([]);
+  const [loading, setLoading] = useState(true); 
 
-  useEffect(async ()=>{
-    try {
-      const posts = await appWriteConfig.getAllPosts();     
-     if(posts){
-      setPosts(posts.documents);
-     }
-    } catch (error){
-      console.log("Home page :: getAllPosts use effect :: error",error);
+  useEffect( ()=>{
+      appWriteConfig.getAllPosts().then(posts =>{
+      if(posts){
+        setPosts(posts.documents);
+        setLoading(false);
+        }
+        }).catch (error=>{
+            console.log("Home page :: getAllPosts use effect :: error",error);
+            setLoading(false);
+         })
+  },[]);
+  
+  if (loading) {
+    return <div className='flex justify-center items-center w-full h-screen'>Loading...</div>; 
+  }
 
-    }
-  },[])
   if(posts?.length === 0){
     return (
-      <div className="w-full py-8 mt-4 text-center">
+      <div className="w-full py-8 mt-4 text-center h-screen">
           <Container>
               <div className="flex flex-wrap">
-                  <div className="p-2 w-full">
+                  <div className="p-2 w-full flex h-screen justify-center items-center">
                       <h1 className="text-2xl font-bold hover:text-gray-500">
-                          Login to read posts
+                          No posts yet
                       </h1>
                   </div>
               </div>
@@ -33,7 +39,7 @@ function Home() {
 }
 
   return (
-    <div className='w-full py-8'>
+    <div className='w-full py-8 h-screen'>
     <Container>
         <div className='flex flex-wrap'>
             {posts.map((post) => (
