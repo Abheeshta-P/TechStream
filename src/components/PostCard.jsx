@@ -1,3 +1,5 @@
+// single post card in all postcard display for general => preview
+
 import React from 'react'
 import appWriteConfig from '../appwrite/config'
 import { Link } from 'react-router-dom'

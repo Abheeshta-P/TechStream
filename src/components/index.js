@@ -7,6 +7,10 @@ import Input from './Input';
 import Button from './Button';
 import PostCard from './PostCard';
 import RTE from "./RTE";
-import Select from './Select'
+import Select from './Select';
 
-export {Header,Footer,Container,Logo,LogoutBtn,Input,Button,PostCard,RTE,Select}
+import Login from './Login';
+import Signup from './Signup';
+import PostForm from "./PostForm/PostForm";
+
+export {Header,Footer,Container,Logo,LogoutBtn,Input,Button,PostCard,RTE,Select,Login,Signup,PostForm}

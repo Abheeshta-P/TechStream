@@ -54,7 +54,3 @@ function RTE({
 
 export default RTE
 
-/*
-- Controller which binds the outer components from libraries to RHF without usage of register
-- 
-*/
