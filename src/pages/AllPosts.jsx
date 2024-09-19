@@ -23,7 +23,7 @@ function AllPosts() {
   },[])
   
   if (loading) {
-    return <div className='flex justify-center items-center w-full h-screen'>Loading...</div>; 
+    return <div className='flex justify-center items-center w-full h-screen text-black'>Loading...</div>; 
   }
 
   if(posts?.length === 0){

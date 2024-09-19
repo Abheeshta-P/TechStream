@@ -31,11 +31,11 @@ function App() {
   },[])
 
   return !loading ?  
-  <div className="flex h-screen content-between w-full flex-col">
+  <div className="flex h-screen content-between w-full flex-col  bg-zinc-300">
    
    
     <Header/>
-    <main className="w-full h-screen">
+    <main className="w-full h-screen mt-20 bg-zinc-300">
       <Outlet/>
     </main>
     <Footer/>

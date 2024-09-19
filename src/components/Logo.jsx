@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Logo() {
+function Logo({color = 'text-white'}) {
   return (
-    <div className='text-black font-bold text-2xl'>Logo</div>
+    <div className={`${color} font-bold text-xl md:text-2xl`}>TechStream</div>
   )
 }
 

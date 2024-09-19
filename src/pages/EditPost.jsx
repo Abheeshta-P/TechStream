@@ -26,7 +26,7 @@ function EditPost() {
   },[navigate,id]); // make the params as id in router instead slug
   
   if (loading) {
-    return <div className='flex justify-center items-center w-full h-screen'>Loading...</div>; 
+    return <div className='flex justify-center items-center w-full h-screen text-black'>Loading...</div>; 
   }
 
   return post? (

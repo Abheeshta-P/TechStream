@@ -35,7 +35,7 @@ function Post() {
   const userAuthorized = post && userData ? post.userId === userData.$id : false;
 
   if (loading) {
-    return <div className='flex justify-center items-center w-full h-screen'>Loading...</div>; 
+    return <div className='flex justify-center items-center w-full h-screen text-black'>Loading...</div>; 
   }
 
   // Delete post

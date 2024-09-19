@@ -40,33 +40,41 @@ function Header() {
     }
   ]
   return (
-    <header className='py-3 shadow bg-gray-500 w-full'>
-      <Container>
-        <nav className='flex'>
-            <div className="mr-4">
-              <Link to={"/"}>
-              <Logo/>
-              </Link>
-            </div>
-            <div className="flex justify-evenly">
-             <ul className='flex'>
-              {
-                listIems.map(list => list.active ? (
-                  <li key={list.name}>
-                    <button className='inline-bock px-6 py-2 duration-200 hover:bg-blue-100 rounded-full' onClick={()=>navigate(list.slug)}>{list.name}</button>
-                  </li>
-                ): null)
-              }
-              {
-                authStatus && (<li>
-                  <LogoutBtn/>
-                </li>)
-              }
-             </ul>
-            </div>
-        </nav>
-      </Container>
-    </header>
+    <header className=' fixed z-50 py-4 shadow bg-zinc-600/90 text-white w-full'>
+  <Container>
+    <nav className=' flex items-center justify-between'>
+      <div className="mr-4">
+        <Link to={"/"}>
+          <Logo />
+        </Link>
+      </div>
+
+      
+
+      {/* Navigation Links */}
+      <div className="md:flex md:space-x-6">
+        <ul className='flex space-x-4'>
+          {listIems.map(list => list.active && (
+            <li key={list.name}>
+              <button 
+                className='px-4 py-[7px] font-semibold text-base text-white bg-zinc-800 rounded-full hover:bg-zinc-900 transition duration-200 ease-in-out'
+                onClick={() => navigate(list.slug)}
+              >
+                {list.name}
+              </button>
+            </li>
+          ))}
+          {authStatus && (
+            <li>
+              <LogoutBtn />
+            </li>
+          )}
+        </ul>
+      </div>
+    </nav>
+  </Container>
+</header>
+
   )
 }
 

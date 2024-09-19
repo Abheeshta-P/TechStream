@@ -19,12 +19,12 @@ function Home() {
   },[]);
   
   if (loading) {
-    return <div className='flex justify-center items-center w-full h-screen'>Loading...</div>; 
+    return <div className='flex justify-center items-center w-full h-screen text-black'>Loading...</div>; 
   }
 
   if(posts?.length === 0){
     return (
-      <div className="w-full py-8 mt-4 text-center h-screen">
+      <div className="w-full py-8 mt-4 text-center h-screen  bg-zinc-300">
           <Container>
               <div className="flex flex-wrap">
                   <div className="p-2 w-full flex h-screen justify-center items-center">
@@ -39,7 +39,7 @@ function Home() {
 }
 
   return (
-    <div className='w-full py-8 h-screen'>
+    <div className='w-full py-8 h-screen bg-zinc-300'>
     <Container>
         <div className='flex flex-wrap'>
             {posts.map((post) => (
