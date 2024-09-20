@@ -28,7 +28,7 @@ function AllPosts() {
 
   if(posts?.length === 0){
     return (
-      <div className="w-full py-8 mt-4 text-center h-screen">
+      <div className="w-full py-8 mt-4 text-center h-screen  text-black">
           <Container>
               <div className="flex flex-wrap">
                   <div className="p-2 w-full flex h-screen justify-center items-center">
@@ -42,7 +42,7 @@ function AllPosts() {
   )
 }
   return (
-    <div className='w-full py-8 h-screen'>
+    <div className='w-full py-8 h-screen text-black'>
     <Container>
         <div className='flex flex-wrap'>
             {posts?.map((post =>(

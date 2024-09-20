@@ -30,7 +30,7 @@ function EditPost() {
   }
 
   return post? (
-    <div className='py-8 h-screen'>
+    <div className='py-8 h-screen text-black'>
         <Container>
             <PostForm post={post} />
         </Container>

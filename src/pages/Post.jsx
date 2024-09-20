@@ -52,13 +52,13 @@ function Post() {
   };
 
   return post? (
-    <div className="py-8 h-screen">
+    <div className="py-8 h-screen text-black">
       <Container>
-        <div className="flex justify-center mb-4 relative border rounded-xl p-2 w-[300px]">
+        <div className="flex justify-center mb-10 relative border border-black/10 rounded-xl h-[250px] md:h-[400px] w-[98%] object-cover">
           <img
             src={appWriteConfig.getFilePreview(post.featuredImage)}
             alt={post.title}
-            className="rounded-xl"
+            className="rounded-xl w-full h-full object-cover"
           />
          
           {userAuthorized && (
@@ -74,11 +74,14 @@ function Post() {
             </div>
           )}
         </div>
-        <div className="w-full mb-6">
-          <h1 className="text-2xl font-bold">{post.title}</h1>
+        <div className='flex flex-col justify-center items-center'>
+        <div className="w-full mb-4">
+          <h1 className="text-3xl font-bold text-center">{post.title}</h1>
         </div>
-        <div className="browser-css">
+        <div className='h-[1px] w-[90%] bg-black mb-9'></div>
+        <div className="browser-css text-base  p-5 w-[98%] ">
           {parse(post.content)}
+        </div>
         </div>
       </Container>
     </div>

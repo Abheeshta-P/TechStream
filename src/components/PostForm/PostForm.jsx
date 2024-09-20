@@ -75,13 +75,13 @@ function PostForm({post}) {
     <form onSubmit={handleSubmit(postForm)}className="flex flex-wrap text-black">
             <div className="w-2/3 px-2">
                 <Input
-                    label="Title :"
+                    label="Title *"
                     placeholder="Title"
                     className="mb-4"
                     {...register("title", { required: true })}
                 />
                 <Input
-                    label="Slug :"
+                    label="Slug *"
                     placeholder="Slug"
                     className="mb-4"
                     {...register("slug", { required: true })}
@@ -89,11 +89,11 @@ function PostForm({post}) {
                         setValue("slug", slugTransform(e.currentTarget.value), { shouldValidate: true });
                     }}
                 />
-                <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
+                <RTE label="Content *" name="content" control={control} defaultValue={getValues("content")} />
             </div>
             <div className="w-1/3 px-2">
                 <Input
-                    label="Featured Image :"
+                    label="Featured Image*"
                     type="file"
                     className="mb-4"
                     accept="image/png, image/jpg, image/jpeg, image/gif"
@@ -110,11 +110,11 @@ function PostForm({post}) {
                 )}
                 <Select
                     options={["active", "inactive"]}
-                    label="Status"
+                    label="Status*"
                     className="mb-4"
                     {...register("status", { required: true })}
                 />
-                <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
+                <Button type="submit" bgColor={post ? "bg-green-700" : undefined} className="w-full">
                     {post ? "Update" : "Submit"}
                 </Button>
             </div>
