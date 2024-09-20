@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom';
-import {Container,Logo, LogoutBtn} from '../index';
+import {Container,Logo, Logoicon, LogoutBtn} from '../index';
 
 // componens which are active are displayed
 // to get the active state we use useSelector
@@ -44,8 +44,11 @@ function Header() {
   <Container>
     <nav className=' flex items-center justify-between'>
       <div className="mr-4">
-        <Link to={"/"}>
+        <Link to={"/"} className='hidden md:block'>
           <Logo />
+        </Link>
+        <Link to={"/"} className='md:hidden'>
+          <Logoicon />
         </Link>
       </div>
 
@@ -57,7 +60,7 @@ function Header() {
           {listIems.map(list => list.active && (
             <li key={list.name}>
               <button 
-                className='px-4 py-[7px] font-semibold text-base text-white bg-zinc-800 rounded-full hover:bg-zinc-900 transition duration-200 ease-in-out'
+                className='px-4 py-[7px] font-semibold text-sm text-white bg-zinc-800 rounded-full hover:bg-zinc-900 transition duration-200 ease-in-out md:text-base'
                 onClick={() => navigate(list.slug)}
               >
                 {list.name}

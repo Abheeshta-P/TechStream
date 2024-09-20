@@ -2,6 +2,7 @@ import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import Container from "./Container/Container";
 import Logo from "./Logo";
+import Logoicon from "./Logoicon";
 import LogoutBtn from "./Header/LogoutBtn";
 import Input from './Input';
 import Button from './Button';
@@ -15,4 +16,4 @@ import PostForm from "./PostForm/PostForm";
 
 import PreLoader from "./PreLoader/PreLoader";
 
-export {Header,Footer,Container,Logo,LogoutBtn,Input,Button,PostCard,RTE,Select,Login,Signup,PostForm,PreLoader}
+export {Header,Footer,Container,Logo,LogoutBtn,Input,Button,PostCard,RTE,Select,Login,Signup,PostForm,PreLoader,Logoicon}
