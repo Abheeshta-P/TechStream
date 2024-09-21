@@ -52,9 +52,6 @@ function Header() {
         </Link>
       </div>
 
-      
-
-      {/* Navigation Links */}
       <div className="md:flex md:space-x-6">
         <ul className='flex space-x-4'>
           {listIems.map(list => list.active && (

@@ -15,7 +15,7 @@ function LogoutBtn() {
   return (
     <>
     <button className='hidden md:block px-4 py-[7px] font-semibold text-base text-white bg-zinc-800 rounded-full hover:bg-zinc-900 transition duration-200 ease-in-out' onClick={inputHandler}>Logout</button>
-    <button className='md:hidden p-2  font-semibold text-base text-white bg-zinc-800 rounded-full hover:bg-zinc-900 transition duration-200 ease-in-out' onClick={inputHandler}><img src='"../../public/logout-xxl.png' className='w-5 h-4'></img></button>
+    <button className='md:hidden p-2  font-semibold text-base text-white bg-zinc-800 rounded-full hover:bg-zinc-900 transition duration-200 ease-in-out' onClick={inputHandler}><img src='"../../../logout-xxl.png' className='w-5 h-4'></img></button>
     </>
   )
 }
