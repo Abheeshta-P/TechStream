@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import appWriteConfig from '../appwrite/config';
 import { useSelector } from 'react-redux';
-import { Container, Button } from '../components';
-import parse from 'html-react-parser';
+import { Container, Button, MarkdownRenderer } from '../components';
 
 function Post() {
   const [post, setPost] = useState(null);
@@ -78,9 +77,9 @@ function Post() {
         <div className="w-full mb-4">
           <h1 className="text-3xl font-bold text-center">{post.title}</h1>
         </div>
-        <div className='h-[1px] w-[90%] bg-black mb-9'></div>
+        <div className='h-[1px] w-[90%] bg-black/20 mb-9'></div>
         <div className="browser-css text-base  p-5 w-[98%] ">
-          {parse(post.content)}
+          <MarkdownRenderer content={post.content}/>
         </div>
         </div>
       </Container>

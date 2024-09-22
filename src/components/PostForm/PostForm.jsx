@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react'
 import appWriteConfig from '../../appwrite/config'
-import { Input,Button,RTE,Select } from '../index';
+import { Input,Button,RTE,Select,MarkdownEditor } from '../index';
 import { useForm } from 'react-hook-form';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -89,7 +89,8 @@ function PostForm({post}) {
                         setValue("slug", slugTransform(e.currentTarget.value), { shouldValidate: true });
                     }}
                 />
-                <RTE label="Content *" name="content" control={control} defaultValue={getValues("content")} />
+                {/* <RTE label="Content *" name="content" control={control} defaultValue={getValues("content")} /> */}
+                <MarkdownEditor label="Content *" defaultValue={getValues("content")} name="content" setValue = {setValue} {...register("content", { required: true })}/>
             </div>
             <div className="w-1/3 px-2">
                 <Input

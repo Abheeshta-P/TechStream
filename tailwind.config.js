@@ -5,7 +5,24 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      topography : (theme) =>({
+        DEFAULT : {
+          css : {
+            a : {
+              textDecoration : 'none',
+              color : theme('colors.blue.500'),
+              fontWeight : '600',
+              '&:hover' : {
+                textDecoration : 'underline',
+              },
+            }
+          }
+        }
+      })
+    },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography')
+  ],
 }
