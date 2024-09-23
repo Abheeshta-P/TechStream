@@ -47,8 +47,13 @@ export class AuthService {
         return null;
       }
     } catch(error) {
-      console.log("App write service :: login :: error",error);
+      if (error.code === 401) { 
+        console.error('Invalid email or password.:', error.message);
+        alert('Invalid email or password !!');
+      } else {
+        console.log("App write service :: login :: error",error);
       throw error;
+      }
     }
   }
 
