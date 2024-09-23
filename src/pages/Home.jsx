@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import appWriteConfig from '../appwrite/config'
 import { PostCard,Container } from '../components';
+import { Link } from 'react-router-dom';
 
 function Home() {
   const [posts,setPosts] = useState([]);
@@ -24,13 +25,15 @@ function Home() {
 
   if(posts?.length === 0){
     return (
-      <div className="w-full py-8 mt-4 text-center h-screen  bg-zinc-300">
+      <div className="w-full py-8 mt-4 text-center h-screen  bg-zinc-50">
           <Container>
               <div className="flex flex-wrap">
-                  <div className="p-2 w-full flex h-screen justify-center items-center">
+                  <div className="p-2 w-full flex h-screen justify-center items-center flex-col">
                       <h1 className="text-2xl font-bold hover:text-gray-500">
                           No posts yet
                       </h1>
+                      <img src="../../no-posts.jpg" alt="no posts yet" className='w-[100px] h-[300px]'/>
+                      <Link to={'/add-post'} className='text-2xl font-bold hover:text-gray-500'>Add post</Link>
                   </div>
               </div>
           </Container>

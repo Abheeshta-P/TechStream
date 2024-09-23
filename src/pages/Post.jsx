@@ -51,7 +51,7 @@ function Post() {
   };
 
   return post? (
-    <div className="py-8 h-screen text-black">
+    <div className="py-8 min-h-screen text-black">
       <Container>
         <div className="flex justify-center mb-10 relative border border-black/10 rounded-xl h-[250px] md:h-[400px] w-[98%] object-cover">
           <img

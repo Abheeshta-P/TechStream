@@ -26,8 +26,13 @@ export class AuthService {
       }
 
     } catch(error) {
-      console.log("App write service :: signUp :: error",error);
-      throw error;
+      if (error.code === 409) { 
+        console.error('User already exists:', error.message);
+        alert('A user with the same Email ID already exists. Please try logging in.');
+      } else {
+        console.log("App write service :: signUp :: error",error);
+        throw error;
+      }
     }
   }
 

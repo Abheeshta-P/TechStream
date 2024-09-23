@@ -31,18 +31,14 @@ function App() {
   },[])
 
   return !loading ?  
-  <div className="flex h-screen content-between w-full flex-col  bg-zinc-300">
-   
-   
-    <Header/>
-    <main className="w-full h-screen mt-20 bg-zinc-300">
-      <Outlet/>
-    </main>
-    <Footer/>
-   
-   
-  
-  </div>:<div className="w-full h-screen flex justify-center items-center"><PreLoader/></div>
+  <div className="flex flex-col min-h-screen bg-zinc-50 ">
+  <Header />
+  <main className="flex-grow bg-zinc-50 mt-14">
+    <Outlet />
+  </main>
+  <Footer />
+</div>
+:<div className="w-full h-screen flex justify-center items-center"><PreLoader/></div>
 }
 
 export default App

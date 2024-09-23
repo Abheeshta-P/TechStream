@@ -5,7 +5,7 @@ import rehypeRaw from 'rehype-raw';
 
 const MarkdownRenderer = ({ content }) => {
   return (
-    <div className="browser-css text-base p-5 w-[98%] prose">
+    <div className="browser-css text-base p-5 w-[98%] prose ">
       <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
       {content}
       </ReactMarkdown>

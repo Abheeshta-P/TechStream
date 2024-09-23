@@ -14,7 +14,7 @@ function PostCard({
         className='rounded-xl' />
     </div>
     <h2
-    className='text-xl font-bold text-black'
+    className='text-xl font-bold text-black text-center'
     >{title}</h2>
     </div>
     </Link>
