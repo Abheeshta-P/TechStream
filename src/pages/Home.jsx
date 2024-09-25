@@ -20,15 +20,15 @@ function Home() {
   },[]);
   
   if (loading) {
-    return <div className='flex justify-center items-center w-full h-screen text-black'>Loading...</div>; 
+    return <div className='flex justify-center items-center w-full min-h-screen text-black'>Loading...</div>; 
   }
 
   if(posts?.length === 0){
     return (
-      <div className="w-full py-8 mt-4 text-center h-screen  bg-zinc-300">
+      <div className="w-full py-8 mt-4 text-center min-h-screen  bg-zinc-300">
           <Container>
               <div className="flex flex-wrap">
-                  <div className="p-2 w-full flex h-screen justify-center items-center flex-col">
+                  <div className="p-2 w-full flex min-h-screen justify-center items-center flex-col">
                       <h1 className="text-2xl font-bold hover:text-gray-500">
                           No posts yet
                       </h1>
@@ -42,7 +42,7 @@ function Home() {
 }
 
   return (
-    <div className='w-full py-8 h-screen bg-zinc-300'>
+    <div className='w-full py-8 min-h-screen bg-zinc-300'>
     <Container>
         <div className='flex flex-wrap'>
             {posts.map((post) => (
