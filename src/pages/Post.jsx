@@ -34,7 +34,7 @@ function Post() {
   const userAuthorized = post && userData ? post.userId === userData.$id : false;
 
   if (loading) {
-    return <div className='flex justify-center items-center w-full h-screen text-black'>Loading...</div>; 
+    return <div className='flex justify-center items-center w-full min-h-screen text-black  bg-zinc-50'>Loading...</div>; 
   }
 
   // Delete post
@@ -51,7 +51,7 @@ function Post() {
   };
 
   return post? (
-    <div className="py-8 min-h-screen text-black">
+    <div className="py-8 min-h-screen w-full text-black bg-zinc-50">
       <Container>
         <div className="flex justify-center mb-10 relative border border-black/10 rounded-xl h-[250px] md:h-[400px] w-[98%] object-cover">
           <img
@@ -85,7 +85,7 @@ function Post() {
       </Container>
     </div>
   ) : (
-    <div className="py-8">
+    <div className="py-8 min-h-screen w-full text-black bg-zinc-50">
       <Container>Could not find the post</Container>
     </div>
   );
