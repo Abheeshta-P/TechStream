@@ -72,7 +72,7 @@ function PostForm({post}) {
   },[watch,setValue]);
 
   return (
-    <form onSubmit={handleSubmit(postForm)}className="flex flex-wrap text-black">
+    <form onSubmit={handleSubmit(postForm)}className="flex flex-wrap text-black mb-10">
             <div className="w-2/3 px-2">
                 <Input
                     label="Title *"

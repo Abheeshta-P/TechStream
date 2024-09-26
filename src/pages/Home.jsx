@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import appWriteConfig from '../appwrite/config'
-import { PostCard,Container,PreLoader } from '../components';
+import { PostCard,Container,PreLoader,Hero } from '../components';
 import { Link } from 'react-router-dom';
 
 function Home() {
@@ -25,7 +25,9 @@ function Home() {
 
   if(posts?.length === 0){
     return (
-      <div className="w-full py-8 mt-4 text-center min-h-screen  bg-zinc-300">
+      <>
+        <Hero/>
+      <div className="w-full py-8 mt-4 text-center min-h-screen  bg-zinc-300 hero">
           <Container>
               <div className="flex flex-wrap">
                   <div className="p-2 w-full flex min-h-screen justify-center items-center flex-col">
@@ -38,12 +40,16 @@ function Home() {
               </div>
           </Container>
       </div>
+      </>
   )
 }
 
   return (
-    <div className='w-full py-8 min-h-screen bg-zinc-300'>
+   <>
+   <Hero/>
+   <div className='w-full py-8 min-h-screen bg-zinc-300 hero'>
     <Container>
+      <h1 className='text-zinc-950 font-bold text-5xl md:text-6xl text-center mb-8'>Posts</h1>
         <div className='flex flex-wrap flex-row justify-center sm:justify-normal'>
             {posts?.map((post) => (
                 <div key={post.$id} className='p-2 w-1/1 sm:w-1/2 md:w-1/3 lg:w-1/4'>
@@ -53,6 +59,7 @@ function Home() {
         </div>
     </Container>
 </div>
+   </>
   )
 
 }

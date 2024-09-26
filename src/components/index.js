@@ -18,5 +18,6 @@ import MarkdownEditor from "./Markdown/MarkdownEditor";
 import MarkdownRenderer from "./Markdown/MarkdownRenderer";
 
 import PreLoader from "./PreLoader/PreLoader";
+import Hero from "./Hero";
 
-export {Header,Footer,Container,Logo,LogoutBtn,Input,Button,PostCard,RTE,Select,Login,Signup,PostForm,PreLoader,Logoicon,MarkdownEditor,MarkdownRenderer}
+export {Header,Footer,Container,Logo,LogoutBtn,Input,Button,PostCard,RTE,Select,Login,Signup,PostForm,PreLoader,Logoicon,MarkdownEditor,MarkdownRenderer,Hero}
