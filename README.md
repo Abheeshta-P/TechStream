@@ -17,18 +17,19 @@ Welcome to **TechStream**, a blogging platform built with **React** ⚛️, desi
 - **Markdown Processing**: ReactMarkdown
 
 ## 📸 Screenshots
-#### Hero section
-![hero](screenshot/Hero.png)
-### Sign up
-![signup](screenshot/signup.png)
-### Login
-![login](screenshot/login.png)
-### All posts
-![all-posts](screenshot/all-posts.png)
-### Add post/Edit post
-![add-edit-post](screenshot/add-post.png)
-### My posts
-![my-posts](screenshot/my-posts.png)
+
+| **Hero Section**                         | **All Posts**                            |
+|------------------------------------------|------------------------------------------|
+| ![hero](screenshot/Hero.png)             | ![all-posts](screenshot/all-posts.png)   |
+
+| **Sign Up**                              | **Login**                                |
+|------------------------------------------|------------------------------------------|
+| ![signup](screenshot/signup.png)         | ![login](screenshot/login.png)           |
+
+| **Add/Edit Post**                        | **My Posts**                             |
+|------------------------------------------|------------------------------------------|
+| ![add-edit-post](screenshot/add-post.png)| ![my-posts](screenshot/my-posts.png)     |
+
 
 
 ## 📫 Contact
