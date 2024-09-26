@@ -16,6 +16,21 @@ Welcome to **TechStream**, a blogging platform built with **React** ⚛️, desi
 - **Styling**: Tailwind CSS, CSS3
 - **Markdown Processing**: ReactMarkdown
 
+## 📸 Screenshots
+#### Hero section
+![hero](screenshot/Hero.png)
+### Sign up
+![signup](screenshot/signup.png)
+### Login
+![login](screenshot/login.png)
+### All posts
+![all-posts](screenshot/all-posts.png)
+### Add post/Edit post
+![add-edit-post](screenshot/add-post.png)
+### My posts
+![my-posts](screenshot/my-posts.png)
+
+
 ## 📫 Contact
 
 Feel free to reach out via [Email](mailto:abheeshta.p@gmail.com).
