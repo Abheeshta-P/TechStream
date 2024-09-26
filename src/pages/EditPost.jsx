@@ -1,7 +1,7 @@
 import React ,{useState,useEffect} from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import appWriteConfig from '../appwrite/config';
-import { Container,PostForm } from '../components';
+import { Container,PostForm,PreLoader } from '../components';
 
 function EditPost() {
   const [post,setPost] = useState(null);
@@ -26,7 +26,7 @@ function EditPost() {
   },[navigate,id]); // make the params as id in router instead slug
   
   if (loading) {
-    return <div className='flex justify-center items-center w-full h-screen text-black'>Loading...</div>; 
+    return <div className="w-full h-screen flex justify-center items-center"><PreLoader color={'#27272a'} opacity={0.5}/></div>;
   }
 
   return post? (

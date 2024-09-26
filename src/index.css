@@ -17,7 +17,7 @@ html,body,#root {
 /* preloader */
 
   .container {
-    --uib-color: white;
+    /* --uib-color: white; */
     --uib-speed: 1.4s;
     --uib-bg-opacity: .1;
     transform-origin: center;
@@ -28,7 +28,7 @@ html,body,#root {
 
   .car {
     fill: none;
-    stroke: var(--uib-color);
+    /* stroke: var(--uib-color); */
     stroke-dasharray: 15, 85;
     stroke-dashoffset: 0;
     stroke-linecap: round;
@@ -38,8 +38,8 @@ html,body,#root {
   }
 
   .track {
-    stroke: var(--uib-color);
-    opacity: var(--uib-bg-opacity);
+    /* stroke: var(--uib-color); */
+    /* opacity: var(--uib-bg-opacity); */
     transition: stroke 0.5s ease;
   }
 

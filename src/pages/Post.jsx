@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import appWriteConfig from '../appwrite/config';
 import { useSelector } from 'react-redux';
-import { Container, Button, MarkdownRenderer } from '../components';
+import { Container, Button, MarkdownRenderer,PreLoader } from '../components';
 
 function Post() {
   const [post, setPost] = useState(null);
@@ -34,7 +34,7 @@ function Post() {
   const userAuthorized = post && userData ? post.userId === userData.$id : false;
 
   if (loading) {
-    return <div className='flex justify-center items-center w-full min-h-screen text-black  bg-zinc-50'>Loading...</div>; 
+    return <div className="w-full h-screen flex justify-center items-center"><PreLoader color={'#27272a'} opacity={0.5}/></div>;
   }
 
   // Delete post

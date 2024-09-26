@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import appWriteConfig from '../appwrite/config'
-import { PostCard,Container } from '../components';
+import { PostCard,Container,PreLoader } from '../components';
 import { Link } from 'react-router-dom';
 
 function Home() {
@@ -20,7 +20,7 @@ function Home() {
   },[]);
   
   if (loading) {
-    return <div className='flex justify-center items-center w-full min-h-screen text-black'>Loading...</div>; 
+    return <div className="w-full h-screen flex justify-center items-center"><PreLoader color={'#27272a'} opacity={0.5}/></div>;
   }
 
   if(posts?.length === 0){
@@ -44,9 +44,9 @@ function Home() {
   return (
     <div className='w-full py-8 min-h-screen bg-zinc-300'>
     <Container>
-        <div className='flex flex-wrap flex-col md:flex-row'>
-            {posts.map((post) => (
-                <div key={post.$id} className='p-2 w-1/4'>
+        <div className='flex flex-wrap flex-row justify-center sm:justify-normal'>
+            {posts?.map((post) => (
+                <div key={post.$id} className='p-2 w-1/1 sm:w-1/2 md:w-1/3 lg:w-1/4'>
                     <PostCard {...post} />
                 </div>
             ))}
