@@ -33,7 +33,7 @@ function App() {
   return !loading ?  
   <div className="flex flex-col min-h-screen bg-zinc-300 ">
   <Header />
-  <main className="flex-grow bg-zinc-300 mt-14">
+  <main className="flex-grow bg-zinc-300 mt-11 sm:mt-20">
     <Outlet />
   </main>
   <Footer />

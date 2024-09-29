@@ -43,7 +43,7 @@ function Header() {
     <header className=' fixed z-50 py-4 shadow bg-zinc-600/90 text-white w-full'>
   <Container>
     <nav className=' flex items-center justify-between'>
-      <div className="mr-4">
+      <div className="sm:mr-4">
         <Link to={"/"} className='hidden md:block'>
           <Logo />
         </Link>
@@ -53,11 +53,11 @@ function Header() {
       </div>
 
       <div className="md:flex md:space-x-6">
-        <ul className='flex space-x-4'>
+        <ul className='flex space-x-1 md:space-x-4'>
           {listIems.map(list => list.active && (
             <li key={list.name}>
               <button 
-                className='px-4 py-[7px] font-semibold text-sm text-white bg-zinc-800 rounded-full hover:bg-zinc-900 transition duration-200 ease-in-out md:text-base'
+                className='px-4 py-[7px] font-semibold text-xs text-nowrap sm:text-sm text-white bg-zinc-800 rounded-full hover:bg-zinc-900 transition duration-200 ease-in-out md:text-base'
                 onClick={() => navigate(list.slug)}
               >
                 {list.name}

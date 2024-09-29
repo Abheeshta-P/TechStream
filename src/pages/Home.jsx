@@ -49,7 +49,7 @@ function Home() {
    <Hero/>
    <div className='w-full py-8 min-h-screen bg-zinc-300 hero'>
     <Container>
-      <h1 className='text-zinc-950 font-bold text-5xl md:text-6xl text-center mb-8'>Posts</h1>
+      <h1 className='text-zinc-950 font-bold text-4xl sm:text-5xl md:text-6xl text-center mb-8'>Posts</h1>
         <div className='flex flex-wrap flex-row justify-center sm:justify-normal'>
             {posts?.map((post) => (
                 <div key={post.$id} className='p-2 w-1/1 sm:w-1/2 md:w-1/3 lg:w-1/4'>

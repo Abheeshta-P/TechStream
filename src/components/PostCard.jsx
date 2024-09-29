@@ -11,7 +11,7 @@ function PostCard({
     <div className=' w-[250px] sm:w-full bg-gray-100 rounded-xl p-4'>
     <div className='w-full justify-center mb-4'>
         <img src={appWriteConfig.getFilePreview(featuredImage)} alt={title}
-        className='rounded-xl' />
+        className='rounded-xl w-[264px] h-[264px] object-cover' />
     </div>
     <h2
     className='text-xl font-bold text-black text-center'

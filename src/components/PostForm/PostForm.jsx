@@ -72,8 +72,8 @@ function PostForm({post}) {
   },[watch,setValue]);
 
   return (
-    <form onSubmit={handleSubmit(postForm)}className="flex flex-wrap text-black mb-10">
-            <div className="w-2/3 px-2">
+    <form onSubmit={handleSubmit(postForm)} className="flex flex-wrap text-black mb-10">
+            <div className="w-full md:w-2/3 px-2">
                 <Input
                     label="Title *"
                     placeholder="Title"
@@ -92,7 +92,7 @@ function PostForm({post}) {
                 {/* <RTE label="Content *" name="content" control={control} defaultValue={getValues("content")} /> */}
                 <MarkdownEditor label="Content *" defaultValue={getValues("content")} name="content" setValue = {setValue} {...register("content", { required: true })}/>
             </div>
-            <div className="w-1/3 px-2">
+            <div className=" w-1/1 mt-12 md:mt-0 md:w-1/3 px-2">
                 <Input
                     label="Featured Image*"
                     type="file"
@@ -115,7 +115,7 @@ function PostForm({post}) {
                     className="mb-4"
                     {...register("status", { required: true })}
                 />
-                <Button type="submit" bgColor={post ? "bg-green-700" : undefined} className="w-full">
+                <Button type="submit" bgColor={post ? "bg-green-700" : undefined} className="w-full text-sm md:text-base">
                     {post ? "Update" : "Submit"}
                 </Button>
             </div>
